@@ -14,21 +14,25 @@
 </template>
 
 <script>
-// import { ref } from 'vue'
-// import { get } from '../../utils/request'
+import { reactive, toRefs } from 'vue'
+import { get } from '../../utils/request'
 import ShopInfo from '../../components/ShopInfo.vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 
-// const useNearbyListEffect = () => {
-//   const nearbyList = ref([])
-//   const getNearbyList = async () => {
-//     const result = await get('/api/shop/hot-list')
-//     if (result?.error === 0 && result?.data?.length) {
-//       nearbyList.value = result.data
-//     }
-//   }
-//   return { nearbyList, getNearbyList }
-// }
+const usegetItemDataEffect = () => {
+  const route = useRoute()
+  const data = reactive({
+    item: {}
+  })
+  const getItemData = async () => {
+    const result = await get(`/api/shop/${route.params.id}`)
+    if (result?.error === 0 && result?.data) {
+      data.item = result.data
+    }
+  }
+  const { item } = toRefs(data)
+  return { item, getItemData }
+}
 
 const usehandlebackEffect = () => {
   const router = useRouter()
@@ -42,17 +46,8 @@ export default {
   name: 'Shop',
   components: { ShopInfo },
   setup () {
-    // const { nearbyList, getNearbyList } = useNearbyListEffect()
-    // getNearbyList()
-    const item = {
-      id: '1',
-      name: '沃尔玛',
-      imgUrl: 'http://www.dell-lee.com/imgs/vue3/near.png',
-      sales: 10000,
-      expressLimit: 0,
-      expressPrice: 5,
-      slogan: 'VIP尊享满89元减4元运费劵'
-    }
+    const { item, getItemData } = usegetItemDataEffect()
+    getItemData()
     const { handleBack } = usehandlebackEffect()
     return { item, handleBack }
   }
@@ -60,13 +55,14 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+@import '../../style/viriables.scss';
 .wrapper {
   padding: 0 .18rem;
 }
 .search {
   line-height: .32rem;
   display: flex;
-  margin: .16rem 0 .16rem 0;
+  margin: .16rem 0 .04rem 0;
   &__back {
     font-size: .24rem;
     color:  #B6B6B6;
@@ -75,13 +71,13 @@ export default {
   &__content {
     display: flex;
     flex: 1;
-    background: #F5F5F5;
+    background: $search-bgColor;
     border-radius: .16rem;
     &__icon {
       width: .44rem;
       height: .32rem;
       text-align: center;
-      color:  #B7B7B7;
+      color: $content-fontColor;
       padding-top: .015rem;
     }
     &__input {

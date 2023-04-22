@@ -10,14 +10,16 @@
       </div>
     </div>
     <ShopInfo :item='item' :hideBorder="true"/>
+    <Content/>
   </div>
 </template>
 
 <script>
 import { reactive, toRefs } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { get } from '../../utils/request'
 import ShopInfo from '../../components/ShopInfo.vue'
-import { useRouter, useRoute } from 'vue-router'
+import Content from './Content.vue'
 
 const usegetItemDataEffect = () => {
   const route = useRoute()
@@ -44,7 +46,7 @@ const usehandlebackEffect = () => {
 
 export default {
   name: 'Shop',
-  components: { ShopInfo },
+  components: { ShopInfo, Content },
   setup () {
     const { item, getItemData } = usegetItemDataEffect()
     getItemData()
@@ -88,11 +90,11 @@ export default {
       background: none;
       height: .32rem;
       width: 100%;
-      color: #333333;
+      color: $conntent-font-color;
       font-size: 14px;
       &::placeholder {
         font-size: 14px;
-        color: #333333;
+        color: $conntent-font-color;
         line-height: 16px;
       }
     }

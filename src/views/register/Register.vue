@@ -106,14 +106,14 @@ export default {
     }
   }
   &__register__button {
-    background: #0091FF;
+    background: $button-color;
     box-shadow: 0 4px 8px 0 rgba(0,145,255,0.32);
     border-radius: 4px;
     border-radius: 4px;
     height: .48rem;
     margin: .32rem .4rem .16rem .4rem;
     font-size: .16rem;
-    color: #FFFFFF;
+    color: $bgColor;
     letter-spacing: 0;
     text-align: center;
     line-height: .48rem;

@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/require-v-for-key -->
 <template>
     <div class="docker">
-        <div v-for="(item, index) in dockerList" :class="{'docker_item':true, 'docker_item--active':index==0}" :key="item.text">
+        <div v-for="(item, index) in dockerList" :class="{'docker_item':true, 'docker_item--active':index==pageIndex}" :key="item.text">
             <router-link :to='item.to'>
             <div class="iconfont" v-html="item.icon">
             </div>
@@ -14,6 +14,7 @@
 <script>
 export default {
   name: 'Docker',
+  props: ['pageIndex'],
   setup () {
     const dockerList = [
       { icon: ' &#xe602', text: '首页', to: { name: 'Home' } },

@@ -11,6 +11,7 @@
     </div>
     <ShopInfo :item='item' :hideBorder="true"/>
     <Content/>
+    <Cart/>
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import { useRouter, useRoute } from 'vue-router'
 import { get } from '../../utils/request'
 import ShopInfo from '../../components/ShopInfo.vue'
 import Content from './Content.vue'
+import Cart from './Cart.vue'
 
 const usegetItemDataEffect = () => {
   const route = useRoute()
@@ -46,7 +48,7 @@ const usehandlebackEffect = () => {
 
 export default {
   name: 'Shop',
-  components: { ShopInfo, Content },
+  components: { ShopInfo, Content, Cart },
   setup () {
     const { item, getItemData } = usegetItemDataEffect()
     getItemData()

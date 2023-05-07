@@ -2,9 +2,11 @@
 <template>
     <div class="docker">
         <div v-for="(item, index) in dockerList" :class="{'docker_item':true, 'docker_item--active':index==0}" :key="item.text">
+            <router-link :to='item.to'>
             <div class="iconfont" v-html="item.icon">
             </div>
-        <div class="docker_title">{{item.text}}</div>
+            <div class="docker_title">{{item.text}}</div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -14,10 +16,10 @@ export default {
   name: 'Docker',
   setup () {
     const dockerList = [
-      { icon: ' &#xe602', text: '首页' },
-      { icon: ' &#xe624', text: '购物车' },
-      { icon: ' &#xe603', text: '订单' },
-      { icon: ' &#xe6b3', text: '我的' }
+      { icon: ' &#xe602', text: '首页', to: { name: 'Home' } },
+      { icon: ' &#xe624', text: '购物车', to: { name: 'CartList' } },
+      { icon: ' &#xe603', text: '订单', to: { name: 'Home' } },
+      { icon: ' &#xe6b3', text: '我的', to: { name: 'Home' } }
     ]
     return { dockerList }
   }
@@ -44,9 +46,15 @@ export default {
         font-size: .20rem;
         margin: .07rem 0 .02rem 0;
     }
+    a {
+      color: $conntent-font-color;
+      text-decoration: none;
+    }
     &--active {
-    color: #1FA4FC;
-        }
+      a {
+          color: #1FA4FC;
+      }
+    }
     }
     &_title {
     font-size: .2rem;

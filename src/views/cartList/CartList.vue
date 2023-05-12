@@ -19,7 +19,7 @@
           <div class="product__item__detail">
             <h4 class="product__item__title">番茄 250g/份</h4>
             <p class="product__item__price">
-              <span class="product__item__yen">&yen;</span>33.3*2
+              <span class="product__item__yen">&yen;</span>33.3x2
               <span class="product__item__origin">&yen;</span>66.6
             </p>
           </div>
@@ -96,6 +96,7 @@ export default {
     @include ellipsis
   }
   &__price {
+    display: flex;
     margin: .06rem 0 0 ;
     line-height: .20rem;
     font-size: .14rem;
@@ -105,7 +106,7 @@ export default {
     font-size: .12rem;
   }
   &__origin {
-    float: right;
+    flex: 1;
     line-height: .20rem;
     font-size: .14rem;
     text-align: center;

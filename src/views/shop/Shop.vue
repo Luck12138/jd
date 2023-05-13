@@ -93,11 +93,11 @@ export default {
       height: .32rem;
       width: 100%;
       color: $conntent-font-color;
-      font-size: 14px;
+      font-size: .14rem;
       &::placeholder {
-        font-size: 14px;
+        font-size: .14rem;
         color: $conntent-font-color;
-        line-height: 16px;
+        line-height: .16rem;
       }
     }
   }

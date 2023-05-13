@@ -19,7 +19,7 @@ export default {
     const dockerList = [
       { icon: ' &#xe602', text: '首页', to: { name: 'Home' } },
       { icon: ' &#xe624', text: '购物车', to: { name: 'CartList' } },
-      { icon: ' &#xe603', text: '订单', to: { name: 'Home' } },
+      { icon: ' &#xe603', text: '订单', to: { name: 'OrderList' } },
       { icon: ' &#xe6b3', text: '我的', to: { name: 'Home' } }
     ]
     return { dockerList }
@@ -28,8 +28,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../style/viriables.scss';
-@import '../../style/mixins.scss';
+@import '../style/viriables.scss';
+@import '../style/mixins.scss';
 .docker {
     display: flex;
     box-sizing: border-box;
@@ -39,7 +39,7 @@ export default {
     bottom: 0;
     width: 100%;
     height: .49rem;
-    border-top: 1px solid $conntent-bgcolor;
+    border-top: .01rem solid $conntent-bgcolor;
     &_item {
     flex: 1;
     text-align: center;

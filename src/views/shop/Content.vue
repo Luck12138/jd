@@ -20,9 +20,9 @@
             </p>
         </div>
         <div class="product__number">
-          <span class="product__number__minus" @click="()=>{changeCartItem(shopId, item.id, item, -1,shopName)}">-</span>
+          <span class="product__number__minus iconfont" @click="()=>{changeCartItem(shopId, item.id, item, -1,shopName)}">&#xe677;</span>
           {{getProductCartCount(shopId, item.id)}}
-          <span class="product__number__plus" @click="()=>{changeCartItem(shopId, item.id, item, 1,shopName)}">+</span>
+          <span class="product__number__plus iconfont" @click="()=>{changeCartItem(shopId, item.id, item, 1,shopName)}">&#xe845;</span>
         </div>
       </div>
     </div>
@@ -172,24 +172,16 @@ export default {
     position: absolute;
     right: 0;
     bottom: .12rem;
-    &__minus,
-    &__plus  {
-      display: inline-block;
-      width: .2rem;
-      height: .2rem;
-      line-height: .17rem;
-      border-radius: 50%;
-      font-size: .2rem;
-      text-align: center;
-    }
     &__minus {
-      border: .01rem solid $medium-fontColor;
+      position:relative;
+      top: .02rem;
       color: $medium-fontColor;
       margin-right: .05rem;
     }
     &__plus {
-      background:  $button-color;
-      color: $bgColor;
+      position:relative;
+      top: .02rem;
+      color: $button-color;
       margin-left: .05rem;
     }
   }

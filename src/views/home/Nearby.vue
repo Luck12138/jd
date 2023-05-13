@@ -39,7 +39,7 @@ export default {
 .nearby {
     &__title {
         margin: .16rem 0 .02rem 0;
-        font-size: 18px;
+        font-size: .18rem;
         color: $conntent-font-color;
     }
     a {
@@ -57,7 +57,7 @@ export default {
     &__content {
         flex: 1;
         padding-bottom: .12rem;
-        border-bottom: 1px solid $conntent-bgcolor;
+        border-bottom: .01rem solid $conntent-bgcolor;
         &__title {
             line-height: .22rem;
             font-size: .16rem;

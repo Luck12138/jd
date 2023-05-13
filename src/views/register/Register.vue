@@ -86,7 +86,7 @@ export default {
     height: .48rem;
     margin: 0 .4rem .16rem .4rem;
     background: #F9F9F9;
-    border: 1px solid rgba(0,0,0,0.10);
+    border: .01rem solid rgba(0,0,0,0.10);
     border-radius: .06rem;
     border-radius: .06rem;
     color: #777;
@@ -107,9 +107,9 @@ export default {
   }
   &__register__button {
     background: $button-color;
-    box-shadow: 0 4px 8px 0 rgba(0,145,255,0.32);
-    border-radius: 4px;
-    border-radius: 4px;
+    box-shadow: 0 .04rem .08rem 0 rgba(0,145,255,0.32);
+    border-radius: .04rem;
+    border-radius: .04rem;
     height: .48rem;
     margin: .32rem .4rem .16rem .4rem;
     font-size: .16rem;
@@ -120,7 +120,7 @@ export default {
   }
   &__login__link {
     color: $content-notice-fontcolor;
-    font-size: 14px;
+    font-size: .14rem;
     letter-spacing: 0;
     text-align: center;
   }

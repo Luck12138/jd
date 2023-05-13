@@ -8,8 +8,7 @@
         v-html=" allChecked ? '&#xe652;': '&#xe66c;' "></span>全选</div>
         <div class="product__header__clear"><span @click="() => clearCartProducts(shopId)">清空购物车</span></div>
       </div>
-      <template v-for="item in productList" :key="item.id">
-        <div class="product__item" v-if="item.count > 0" >
+        <div class="product__item" v-for="item in productList" :key="item.id">
           <div class="product__item__checked iconfont" v-html="item.check ? '&#xe652;': '&#xe66c;'"
           @click="() => changeCartItemChecked(shopId, item.id)"></div>
           <img class="product__item__img" :src="item.imgUrl" />
@@ -21,12 +20,11 @@
               </p>
           </div>
           <div class="product__number">
-            <span class="product__number__minus" @click="()=>{changeItemInfo(shopId, item.id, item, -1)}">-</span>
+            <span class="product__number__minus iconfont" @click="()=>{changeItemInfo(shopId, item.id, item, -1)}">&#xe677;</span>
             {{item.count || 0 }}
-            <span class="product__number__plus" @click="()=>{changeItemInfo(shopId, item.id, item, 1)}">+</span>
+            <span class="product__number__plus iconfont" @click="()=>{changeItemInfo(shopId, item.id, item, 1)}">&#xe845;</span>
           </div>
         </div>
-      </template>
     </div>
     <div class="check">
       <div class="check__icon">
@@ -36,7 +34,7 @@
       <div class="check__info">
         总计：<span class="check__info__price">&yen; {{price}}</span>
       </div>
-      <div class="check__btn">
+      <div class="check__btn" v-show="price > 0 ">
         <router-link :to="{path: `/OrderConfirmation/${shopId}`}">去结算</router-link></div>
     </div>
   </div>
@@ -191,7 +189,7 @@ export default {
     display: flex;
     vertical-align: top;
     line-height: .52rem;
-    border-bottom:1px solid $conntent-bgcolor;
+    border-bottom:.01rem solid $conntent-bgcolor;
     font-size: .14rem;
     color: #333;
     &__all {
@@ -259,24 +257,16 @@ export default {
     position: absolute;
     right: 0;
     bottom: .12rem;
-    &__minus,
-    &__plus  {
-      display: inline-block;
-      width: .2rem;
-      height: .2rem;
-      line-height: .17rem;
-      border-radius: 50%;
-      font-size: .2rem;
-      text-align: center;
-    }
     &__minus {
-      border: .01rem solid $medium-fontColor;
+      position: relative;
+      top: .02rem;
       color: $medium-fontColor;
       margin-right: .05rem;
     }
     &__plus {
-      background:  $button-color;
-      color: $bgColor;
+      position: relative;
+      top: .02rem;
+      color: $button-color;
       margin-left: .05rem;
     }
   }

@@ -40,7 +40,7 @@ export default {
         flex: 1;
         padding-bottom: .12rem;
         &--bordered {
-            border-bottom: 1px solid $conntent-bgcolor;
+            border-bottom: .01rem solid $conntent-bgcolor;
         }
         &__title {
             line-height: .22rem;

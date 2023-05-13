@@ -83,7 +83,7 @@ export default {
     height: .48rem;
     margin: 0 .4rem .16rem .4rem;
     background: #F9F9F9;
-    border: 1px solid rgba(0,0,0,0.10);
+    border: .01rem solid rgba(0,0,0,0.10);
     border-radius: .06rem;
     border-radius: .06rem;
     padding: 0 .16rem;
@@ -109,7 +109,7 @@ export default {
     box-shadow: 0 .04rem .08rem 0 rgba(0,145,255,0.32);
     border-radius: .04rem;
     border-radius: .04rem;
-    font-size: 16px;
+    font-size: .16rem;
     color: $bgColor;
     letter-spacing: 0;
     text-align: center;

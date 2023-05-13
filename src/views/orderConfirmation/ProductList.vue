@@ -3,8 +3,7 @@
     <div class="products__title">{{shopName}}</div>
     <div class="products__wrapper">
       <div class="products__list">
-        <template v-for="item in productList" :key="item.id">
-        <div class="products__item"  v-if="item.count > 0">
+        <div class="products__item"  v-for="item in productList" :key="item.id">
           <img class="products__item__img" :src="item.imgUrl" />
           <div class="products__item__detail">
             <h4 class="products__item__title">{{item.title}}</h4>
@@ -20,7 +19,6 @@
             </p>
           </div>
         </div>
-        </template>
       </div>
       </div>
   </div>
